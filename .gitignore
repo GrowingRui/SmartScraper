@@ -1,0 +1,20 @@
+# Python 编译文件
+__pycache__/
+*.pyc
+
+# 虚拟环境 (重要！不要传这个)
+.venv/
+venv/
+env/
+
+# IDE 配置文件
+.idea/
+.vscode/
+
+# 爬虫结果数据 (不要把抓取的数据传上去)
+scrapy_app/result.json
+scrapy_app/result.jsonl
+
+# 系统文件
+.DS_Store
+Thumbs.db
