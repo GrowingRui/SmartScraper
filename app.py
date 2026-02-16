@@ -16,14 +16,14 @@ def run_scraper():
     scrapy_project_path = os.path.join(base_dir, "scrapy_app")
 
     if target_url:
-        # 使用 -O 覆盖模式，文件名保持 result.json
+        # 使用 -O (大写) 覆盖旧文件，确保数据不重叠
         cmd = f'scrapy crawl universal_spider -a url="{target_url}" -O result.json'
 
-        # 异步启动
+        # 启动子进程
         subprocess.Popen(cmd, shell=True, cwd=scrapy_project_path)
-        return jsonify({"message": "多页抓取任务已启动，请观察 PyCharm 控制台"}), 200
+        return jsonify({"message": "多页爬取任务启动，请在 PyCharm 控制台监控进度"}), 200
 
-    return jsonify({"message": "无效 URL"}), 400
+    return jsonify({"message": "URL无效"}), 400
 
 
 if __name__ == '__main__':
